@@ -1,0 +1,3 @@
+const r=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!r){const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.style.opacity=1;x.target.style.transform='none';io.unobserve(x.target)}}),{threshold:.08});
+document.querySelectorAll('.sec,.hero').forEach(el=>{el.style.opacity=0;el.style.transform='translateY(12px)';el.style.transition='opacity .5s ease,transform .5s ease';io.observe(el)});}
